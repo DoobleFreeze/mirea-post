@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title th:text="${title}"></title>
+    <link rel="shortcut icon" type="image/x-icon" th:href="@{/img/favicon.ico}">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/default.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.min.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/owl.carousel.min.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/animate.min.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/magnific-popup.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/font-awesome.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/font-awesome.min.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/meanmenu.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/themify-icons.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/slick.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/responsive.css}">
+</head>
+<body>
+<header>
+    <!-- header-top-area-start -->
+    <div class="header-top-area mb-20">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-3 col-lg-3">
+                    <div class="logo">
+                        <a href="/"><img th:src="@{/img/логотип.png}" alt=""/></a>
+                    </div>
+                </div>
+                <div class="col-xl-9 col-lg-9">
+                    <div class="main-menu text-right">
+                        <nav id="mobile-menu">
+                            <ul th:if="${not auth.isEmpty()}">
+                                <li><a href="/posts">лента</a></li>
+                                <li><a href="/news">добавить пост</a></li>
+                                <li><a th:href="@{/profile/(orderId=${id_user})}" th:text="${auth}"></a>
+                                    <ul class="sub-menu text-left">
+                                        <li><a th:href="@{/profile/(orderId=${id_user})}">профиль</a></li>
+                                        <li><a href="/logout">выход</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            <ul th:if="${auth.isEmpty()}">
+                                <li><a href="/posts">лента</a></li>
+                                <li><a href="/login">вход</a></li>
+                                <li><a href="/register">регистрация</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <div class="mobile-menu"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- header-top-area-end -->
+</header>
+<!-- Begin page content -->
+<main role="main" class="container">
+    <div class="breadcrumb-area pt-100 pb-100 gray-bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-8 col-lg-8 offset-lg-2 offset-xl-2">
+                    <div class="breadcrumb-text text-center">
+                        <h3>Что такое Post?</h3>
+                        <p>Post. - это единная лента, где отбражены все новости, статьи, факты от всех пользователей
+                            соц. сети.<br>
+                            Присоединяйся и ты!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="about-area pt-100 pb-70">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-5 col-lg-5 mb-30">
+                    <div class="about-img">
+                        <img th:src="@{/img/about.png}" alt=""/>
+                    </div>
+                </div>
+                <div class="col-xl-7 col-lg-7">
+                    <div class="about-wrapper">
+                        <div class="about-text">
+                            <h4 class="about-title">Задачи проекта</h4>
+                            <p>Главное для нас - это возможность постоянного обмена информации между пользователями.
+                                Поэтому была создана единая лента, где отображены все посты от всех пользователей
+                                платформы.
+                                Это позволяет получать информацию не только от популярных личностей, как в других соц.
+                                сетях,
+                                но и от менее известных персон. Узнавай новое и делись интересным - слоган нашей
+                                платформы.</p>
+                            <h4 class="about-title">Как начать?</h4>
+                            <ul class="about-link">
+                                <li>Зарегистрируйся</li>
+                                <li>Изучи ленту</li>
+                                <li>Создай собственный пост</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+<footer>
+    <div class="footer-area pt-40 pb-20">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-5 col-lg-5 col-md-5 mb-20">
+                    <div class="footer-icon">
+                        <a href="https://github.com/DoobleFreeze"><i class="fa fa-github fa-lg"></i></a>
+                        <a href="https://vk.com/df_nik"><i class="fa fa-vk fa-lg"></i></a>
+                    </div>
+                </div>
+                <div class="col-xl-7 col-lg-7 col-md-7 mb-20">
+                    <div class="copyright text-md-right">
+                        <p>Copyright <i class="fa fa-copyright"></i> 2022 Post.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+<script th:src="@{/js/vendor/jquery-1.12.4.min.js}"></script>
+<script th:src="@{/js/bootstrap.min.js}"></script>
+<script th:src="@{/js/jquery.magnific-popup.min.js}"></script>
+<script th:src="@{/js/slick.min.js}"></script>
+<script th:src="@{/js/jquery.meanmenu.min.js}"></script>
+<script th:src="@{/js/ajax-form.js}"></script>
+<script th:src="@{/js/wow.min.js}"></script>
+<script th:src="@{/js/jquery.scrollUp.min.js}"></script>
+<script th:src="@{/js/imagesloaded.pkgd.min.js}"></script>
+<script th:src="@{/js/jquery.magnific-popup.min.js}"></script>
+<script th:src="@{/js/plugins.js}"></script>
+<script th:src="@{/js/main.js}"></script>
+</body>
+</html>
